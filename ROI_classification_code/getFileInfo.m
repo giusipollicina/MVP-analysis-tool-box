@@ -1,30 +1,30 @@
-%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ìvisualî cortex of congenitally blind individuals. Current Biology.
+%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ‚Äúvisual‚Äù cortex of congenitally blind individuals. Current Biology.
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function [input_file_info]=getFileInfo(subject, Hem, CondClass, POIfile_ind)
 
 %%% important parameters
-nVols=218;
-nPreds=18+1;   %% number of stimulation blocks plus 1 for baseline 
+%nVols=218; write for each individual subject, inside each if loop (number excluding the dummy volumes)
+nPreds=108+1;   %% number of stimulation blocks plus 1 for baseline 
 %CondClass=1:3;   %% the conditions to classify, their codes in txt file
-nTrials=18; %number of stimulation blocks (without baseline) per run
-nPerRun=6;   %% number of blocks per condition per run
+nTrials=108; %number of stimulation blocks (without baseline) per run
+nPerRun=3;   %% number of blocks per condition per run
 
-if(strcmp(subject,'EL'))
+if(strcmp(subject,'sub-1'))
     nVols=113; % EL underwent a short version of the experiment 
     
     % the path to the files
-    dir_name='C:\Users\bolal\Desktop\Sound_decoding_in_the_blind\EL\';
+    dir_name='C:\Users\bolal\Desktop\Sound_decoding_in_the_blind\EL\'; %data for that subject
     % (note the slashes change direction on a pc) 
     % the poi file - patch of interest
     
     if(Hem=='LH')
         if POIfile_ind == 1
-            poi_name='POIs\Auditory_LH.poi';
-         elseif POIfile_ind == 2
-             poi_name='POIs\Motor_LH.poi';
+            poi_name='POIs\Auditory_LH.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='POIs\Motor_LH.poi'; %add another elseif to add another POI
          else
-             poi_name = 'POIs\Visual_LH_ALIGNED_TO_EL.poi';
+             poi_name = 'POIs\Visual_LH_ALIGNED_TO_EL.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
@@ -58,10 +58,10 @@ if(strcmp(subject,'EL'))
     dm_name{3}='EL_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
     dm_name{4}='EL_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
     
-    dm_name2{1}='EL_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{2}='EL_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{3}='EL_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{4}='EL_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
+   % dm_name2{1}='EL_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm'; % you might not need these
+   % dm_name2{2}='EL_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
+   % dm_name2{3}='EL_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
+   % dm_name2{4}='EL_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
@@ -506,10 +506,10 @@ input_file_info.dir_name=dir_name;
 input_file_info.poi_name=poi_name;
 input_file_info.mtc_name=mtc_name;
 input_file_info.dm_name=dm_name;  %% block or trial wise
-input_file_info.dm2=dm_name2; %% condition wise
+%input_file_info.dm2=dm_name2; %% condition wise
 input_file_info.cond_locs=cond_locs;
 input_file_info.pars=pars;
-input_file_info.CondClass=CondClass; %commented out at the beginning
+%input_file_info.CondClass=CondClass; %commented out at the beginning
 input_file_info.subject=subject;
 input_file_info.Hem=Hem;
 

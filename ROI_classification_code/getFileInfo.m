@@ -26,7 +26,7 @@ if(strcmp(subject,'sub-1'))
          elseif POIfile_ind == 3
              poi_name='sub-1_LH_V3.poi';
          else
-             poi_name = 'sub-1_LH_EVC.poi'; %EVC POI
+             poi_name ='sub-1_LH_EVC.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
@@ -37,7 +37,7 @@ if(strcmp(subject,'sub-1'))
          elseif POIfile_ind == 3
              poi_name='sub-1_RH_V3.poi';
          else
-             poi_name = 'sub-1_RH_EVC.poi'; %EVC POI
+             poi_name ='sub-1_RH_EVC.poi'; %EVC POI
         end
     end
     
@@ -74,123 +74,123 @@ if(strcmp(subject,'sub-1'))
     cond_locs_name{3}='animate_inanimate.txt';
     cond_locs_name{4}='animate_inanimate.txt';
     
-elseif(strcmp(subject,'EMA'))
+elseif(strcmp(subject,'sub-2'))
     
         % the path to the files
-    dir_name='C:\Users\bolal\Desktop\Sound_decoding_in_the_blind\EMA\';
+    dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-2/';
     % (note the slashes change direction on a pc) 
     % the poi file - patch of interest
     
-    if(Hem=='LH')
-        if POIfile_ind ==1
-            poi_name='POIs\Auditory_LH.poi';
-         elseif POIfile_ind ==2
-             poi_name='POIs\Motor_LH.poi';
-        else
-             poi_name = 'POIs\Visual_LH_ALIGNED_TO_EMA.poi';
+  if(Hem=='LH')
+        if POIfile_ind == 1
+            poi_name='sub-2_LH_V1.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='sub-2_LH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-2_LH_V3.poi';
+         else
+             poi_name ='sub-2_LH_EVC.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
-        if POIfile_ind ==1
-            poi_name='POIs\Auditory_RH.poi';
-         elseif POIfile_ind ==2
-             poi_name='POIs\Motor_RH.poi';
-        else
-             poi_name = 'POIs\Visual_RH_ALIGNED_TO_EMA.poi';
+        if POIfile_ind == 1
+            poi_name='sub-2_RH_V1.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='sub-2_RH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-2_RH_V3.poi';
+         else
+             poi_name ='sub-2_RH_EVC.poi'; %EVC POI
         end
     end
     
     % the mtc file - mesh time course files
     if(Hem=='LH')
-        mtc_name{1}='EMA_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{2}='EMA_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{3}='EMA_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{4}='EMA_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
+        mtc_name{1}='sub-2_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{2}='sub-2_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{3}='sub-2_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{4}='sub-2_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
         
     elseif(Hem=='RH')
-        mtc_name{1}='EMA_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{2}='EMA_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{3}='EMA_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{4}='EMA_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
+        mtc_name{1}='sub-2_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{2}='sub-2_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{3}='sub-2_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{4}='sub-2_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
         
     end
     
     % the design matrix files (single trial, single block based)
-    dm_name{1}='EMA_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{2}='EMA_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{3}='EMA_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{4}='EMA_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    
-    dm_name2{1}='EMA_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{2}='EMA_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{3}='EMA_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{4}='EMA_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
+    dm_name{1}='sub-2_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{2}='sub-2_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{3}='sub-2_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{4}='sub-2_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+ 
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='EMA_run1_AVScenesBlind_trialseq.txt';
-    cond_locs_name{2}='EMA_run2_AVScenesBlind_trialseq.txt';
-    cond_locs_name{3}='EMA_run3_AVScenesBlind_trialseq.txt';
-    cond_locs_name{4}='EMA_run4_AVScenesBlind_trialseq.txt';
+    cond_locs_name{1}='animate_inanimate.txt';
+    cond_locs_name{2}='animate_inanimate.txt';
+    cond_locs_name{3}='animate_inanimate.txt';
+    cond_locs_name{4}='animate_inanimate.txt';
     
-elseif(strcmp(subject,'GAG'))
+elseif(strcmp(subject,'sub-3'))
     
-        % the path to the files
-    dir_name='C:\Users\bolal\Desktop\Sound_decoding_in_the_blind\GAG\';
+               % the path to the files
+    dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-3/';
     % (note the slashes change direction on a pc) 
     % the poi file - patch of interest
     
-    if(Hem=='LH')
-        if POIfile_ind ==1
-            poi_name='POIs\Auditory_LH.poi';
-         elseif POIfile_ind ==2
-             poi_name='POIs\Motor_LH.poi';
-        else
-             poi_name = 'POIs\Visual_LH_ALIGNED_TO_GAG.poi';
+  if(Hem=='LH')
+        if POIfile_ind == 1
+            poi_name='sub-3_LH_V1.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='sub-3_LH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-3_LH_V3.poi';
+         else
+             poi_name ='sub-2_LH_EVC.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
-        if POIfile_ind ==1
-            poi_name='POIs\Auditory_RH.poi';
-         elseif POIfile_ind ==2
-             poi_name='POIs\Motor_RH.poi';
-        else
-             poi_name = 'POIs\Visual_RH_ALIGNED_TO_GAG.poi';
+        if POIfile_ind == 1
+            poi_name='sub-3_RH_V1.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='sub-3_RH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-3_RH_V3.poi';
+         else
+             poi_name ='sub-3_RH_EVC.poi'; %EVC POI
         end
     end
     
     % the mtc file - mesh time course files
     if(Hem=='LH')
-        mtc_name{1}='GAG_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{2}='GAG_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{3}='GAG_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{4}='GAG_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
+        mtc_name{1}='sub-3_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{2}='sub-3_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{3}='sub-3_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{4}='sub-3_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
         
     elseif(Hem=='RH')
-        mtc_name{1}='GAG_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{2}='GAG_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{3}='GAG_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{4}='GAG_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
+        mtc_name{1}='sub-3_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{2}='sub-3_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{3}='sub-3_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{4}='sub-3_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
         
     end
     
     % the design matrix files (single trial, single block based)
-    dm_name{1}='GAG_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{2}='GAG_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{3}='GAG_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{4}='GAG_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    
-    dm_name2{1}='GAG_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{2}='GAG_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{3}='GAG_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
-    dm_name2{4}='GAG_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
+    dm_name{1}='sub-3_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{2}='sub-3_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{3}='sub-3_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{4}='sub-3_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+ 
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='GAG_run1_AVScenesBlind_trialseq.txt';
-    cond_locs_name{2}='GAG_run2_AVScenesBlind_trialseq.txt';
-    cond_locs_name{3}='GAG_run3_AVScenesBlind_trialseq.txt';
-    cond_locs_name{4}='GAG_run4_AVScenesBlind_trialseq.txt';
+    cond_locs_name{1}='animate_inanimate.txt';
+    cond_locs_name{2}='animate_inanimate.txt';
+    cond_locs_name{3}='animate_inanimate.txt';
+    cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'MF'))
     

@@ -4,13 +4,13 @@
 %this runs the single SVM for all subjects
 
 subjects = {...
-    'EL','EMA','GAG','MF','MM','OB','OG','SA'...
+    'sub-1','sub-2','sub-3','sub-4','sub-5','sub-6','sub-7','sub-8', 'sub-9', 'sub-10', 'sub-14', 'sub-15', 'sub-16', 'sub-17', 'sub-18'...
     };
-CondClass = [1 2 3];
+CondClass = [1 2];
 
 
 for subject = 1:length(subjects)
-    for POIfile_ind = 1:3    
+    for POIfile_ind = 1:4    
         if POIfile_ind == 3
             for patch = 1:16
                 run_single_sub_CollapseHem_main_analysis_parallel(subjects{subject},patch,CondClass,POIfile_ind);

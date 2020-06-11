@@ -14,49 +14,53 @@ if(strcmp(subject,'sub-1'))
     nVols=113; % EL underwent a short version of the experiment 
     
     % the path to the files
-    dir_name='C:\Users\bolal\Desktop\Sound_decoding_in_the_blind\EL\'; %data for that subject
+    dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-1/'; %data for that subject
     % (note the slashes change direction on a pc) 
     % the poi file - patch of interest
     
     if(Hem=='LH')
         if POIfile_ind == 1
-            poi_name='POIs\Auditory_LH.poi'; %V1
+            poi_name='sub-1_LH_V1.poi'; %V1
          elseif POIfile_ind == 2 %V2
-             poi_name='POIs\Motor_LH.poi'; %add another elseif to add another POI
+             poi_name='sub-1_LH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-1_LH_V3.poi';
          else
-             poi_name = 'POIs\Visual_LH_ALIGNED_TO_EL.poi'; %EVC POI
+             poi_name = 'sub-1_LH_EVC.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
-        if POIfile_ind ==1
-            poi_name='POIs\Auditory_RH.poi';
-         elseif POIfile_ind ==2
-             poi_name='POIs\Motor_RH.poi';
+        if POIfile_ind == 1
+            poi_name='sub-1_RH_V1.poi'; %V1
+         elseif POIfile_ind == 2 %V2
+             poi_name='sub-1_RH_V2.poi'; %add another elseif to add another POI
+         elseif POIfile_ind == 3
+             poi_name='sub-1_RH_V3.poi';
          else
-             poi_name = 'POIs\Visual_RH_ALIGNED_TO_EL.poi';
+             poi_name = 'sub-1_RH_EVC.poi'; %EVC POI
         end
     end
     
     % the mtc file - mesh time course files
     if(Hem=='LH')
-        mtc_name{1}='EL_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{2}='EL_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{3}='EL_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
-        mtc_name{4}='EL_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_LH_SPH.mtc';
+        mtc_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
         
     elseif(Hem=='RH')
-        mtc_name{1}='EL_AVScenes_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{2}='EL_AVScenes_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{3}='EL_AVScenes_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
-        mtc_name{4}='EL_AVScenes_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_RH_SPH.mtc';
+        mtc_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
         
     end
     
     % the design matrix files (single trial, single block based)
-    dm_name{1}='EL_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{2}='EL_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{3}='EL_AVScenesLong_Run3_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
-    dm_name{4}='EL_AVScenesLong_Run4_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL_condsep.sdm';
+    dm_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
     
    % dm_name2{1}='EL_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm'; % you might not need these
    % dm_name2{2}='EL_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
@@ -65,10 +69,10 @@ if(strcmp(subject,'sub-1'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='EL_run1_AVScenesBlind_trialseq.txt';
-    cond_locs_name{2}='EL_run2_AVScenesBlind_trialseq.txt';
-    cond_locs_name{3}='EL_run3_AVScenesBlind_trialseq.txt';
-    cond_locs_name{4}='EL_run4_AVScenesBlind_trialseq.txt';
+    cond_locs_name{1}='animate_inanimate.txt';
+    cond_locs_name{2}='animate_inanimate.txt';
+    cond_locs_name{3}='animate_inanimate.txt';
+    cond_locs_name{4}='animate_inanimate.txt';
     
 elseif(strcmp(subject,'EMA'))
     

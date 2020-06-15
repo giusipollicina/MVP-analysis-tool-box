@@ -1,4 +1,4 @@
-%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ìvisualî cortex of congenitally blind individuals. Current Biology.
+%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ‚Äúvisual‚Äù cortex of congenitally blind individuals. Current Biology.
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function [outD]=readDataMtcPoi(subject,Patch_ind, Hem,CondClass,POIfile_ind)
@@ -27,10 +27,13 @@ dmName=fileNames.dm_name;
 condLocs=fileNames.cond_locs;
 p=fileNames.pars;  %% nClass and nVols
 subject=fileNames.subject;
+nVols_all = fileNames.nVols; %this is a vector specific to Giusi's exp
 
 % some parameters
 nRuns=length(mtcName);
-nVols=p(1);
+%nVols=p(1);
+%nVols are defined for each run separately in the loop below - this is
+%specific to Giusi's exp
 nPreds=p(2);
 nTrials=p(3);
 nPerRun=p(4);
@@ -53,8 +56,10 @@ else
 end
 
 nVert=length(locsV);
-mtcData=zeros(nVols,nVert,nRuns);
-DM=zeros(nVols,nPreds,nRuns);
+%mtcData=zeros(nVols,nVert,nRuns);
+%DM=zeros(nVols,nPreds,nRuns);
+%these two parameters need to be defined in the loop below as nVols differs depending on
+%run - specific to Giusi's exp
 betas=zeros(nPreds-1,nVert,nRuns);  %% minus one for mean confound
 tvals=zeros(size(betas));
 
@@ -68,6 +73,13 @@ tvals=zeros(size(betas));
 % main loop
 for r=1:nRuns
 
+    nVols = nVols_all(nRuns);
+    %extract the correct number of volumes from the array depending on run
+    %number
+    
+    mtcData=zeros(nVols,nVert,nRuns);
+    DM=zeros(nVols,nPreds,nRuns);
+    
     % load in MTC DATA
 
     main=BVQXfile([dirName mtcName{r}]);
@@ -139,14 +151,17 @@ p(2)=nConditions;
 p(3)=nPerRun;
 p(4)=nVert;  
 p(5)=nRuns;
-p(6)=nVols;
+%p(6)=nVols;
+%this is a vector in Giusi's exp and therefore has to saved differently -
+%see below in the s cell array
 
 s=cell(1,4);
 s{1,1}=subject;
 s{1,2}=dirName;         %% where to save any output files
 s{1,3}=p;               %% useful parameters
 s{1,4}=locsV;           %% all verts in POI
-s{1,5}=fileNames;   
+s{1,5}=fileNames; 
+s{1,6}=nVols_all;
 
 
 outD=[];
@@ -166,8 +181,5 @@ outD.S=s;               %% useful parameters
 %outD.anova=anova;
 %this univariate analysis is run just to see whether there are univariate
 %effects in the data. This is independent from the pattern classification.
-
-
-
 
 

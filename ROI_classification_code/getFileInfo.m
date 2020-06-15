@@ -1,4 +1,4 @@
-%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early “visual” cortex of congenitally blind individuals. Current Biology.
+%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early â€œvisualâ€? cortex of congenitally blind individuals. Current Biology.
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function [input_file_info]=getFileInfo(subject, Hem, CondClass, POIfile_ind)
@@ -11,7 +11,9 @@ nTrials=108; %number of stimulation blocks (without baseline) per run
 nPerRun=3;   %% number of blocks per condition per run
 
 if(strcmp(subject,'sub-1'))
-    nVols=113; % EL underwent a short version of the experiment 
+    nVols = [361 359 358]; % insert the number of volumes for each run 
+    %- these are made up, change accordingly! And add to each subject
+    %individually
     
     % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-1/'; %data for that subject
@@ -75,6 +77,7 @@ if(strcmp(subject,'sub-1'))
     cond_locs_name{4}='animate_inanimate.txt';
     
 elseif(strcmp(subject,'sub-2'))
+    nVols = [360 358 360 357]; % insert the number of volumes for each run  
     
         % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-2/';
@@ -134,6 +137,7 @@ elseif(strcmp(subject,'sub-2'))
     cond_locs_name{4}='animate_inanimate.txt';
     
 elseif(strcmp(subject,'sub-3'))
+     nVols = [359 360 359 362]; % insert the number of volumes for each run 
     
                % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-3/';
@@ -193,7 +197,8 @@ elseif(strcmp(subject,'sub-3'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-4'))
-     
+     nVols = [361 362 362 360]; % insert the number of volumes for each run 
+    
                % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-4/';
     % (note the slashes change direction on a pc) 
@@ -252,7 +257,7 @@ elseif(strcmp(subject,'sub-4'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-5'))
-    
+     nVols = [362 371 359 360]; % insert the number of volumes for each run 
        
                % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-5/';
@@ -312,7 +317,7 @@ elseif(strcmp(subject,'sub-5'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-6'))
-    
+    nVols = [358 362 358 362]; % insert the number of volumes for each run  
 
                % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-6/';
@@ -373,6 +378,7 @@ elseif(strcmp(subject,'sub-6'))
     
     
 elseif(strcmp(subject,'sub-7'))
+     nVols = [359 358 358 359]; % insert the number of volumes for each run 
     
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-7/';
@@ -433,7 +439,8 @@ elseif(strcmp(subject,'sub-7'))
 
 
 elseif(strcmp(subject,'sub-8'))
-      
+     nVols = [360 375 359 362]; % insert the number of volumes for each run 
+    
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-8/';
     % (note the slashes change direction on a pc) 
@@ -493,7 +500,8 @@ elseif(strcmp(subject,'sub-8'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-9'))
-      
+     nVols = [368 358 360 360]; % insert the number of volumes for each run 
+    
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-9/';
     % (note the slashes change direction on a pc) 
@@ -553,7 +561,8 @@ elseif(strcmp(subject,'sub-9'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-10'))
-      
+    nVols = [358 358 360 357]; % insert the number of volumes for each run 
+   
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-10/';
     % (note the slashes change direction on a pc) 
@@ -613,7 +622,8 @@ elseif(strcmp(subject,'sub-10'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-14'))
-      
+    nVols = [360 360 361 357]; % insert the number of volumes for each run 
+   
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-14/';
     % (note the slashes change direction on a pc) 
@@ -673,7 +683,8 @@ elseif(strcmp(subject,'sub-14'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-15'))
-      
+    nVols = [358 359 362 361]; % insert the number of volumes for each run 
+    
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-15/';
     % (note the slashes change direction on a pc) 
@@ -733,7 +744,8 @@ elseif(strcmp(subject,'sub-15'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-16'))
-      
+     nVols = [361 360 362 367]; % insert the number of volumes for each run 
+    
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-16/';
     % (note the slashes change direction on a pc) 
@@ -793,7 +805,8 @@ elseif(strcmp(subject,'sub-16'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-17'))
-      
+    nVols = [361 361 359 366]; % insert the number of volumes for each run 
+   
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-17/';
     % (note the slashes change direction on a pc) 
@@ -853,7 +866,8 @@ elseif(strcmp(subject,'sub-17'))
     cond_locs_name{4}='animate_inanimate.txt';
 
 elseif(strcmp(subject,'sub-18'))
-      
+     nVols = [359 358 360 358]; % insert the number of volumes for each run 
+    
 	  % the path to the files
     dir_name='/MRIWork/MRIWork10/pv/giusi_pollicina/data_for_MVPA/sub-18/';
     % (note the slashes change direction on a pc) 
@@ -927,7 +941,7 @@ end
 
 % put into structure for easy parsing
 input_file_names=[]; %not used anywhere else in the script - what for?
-pars(1)=nVols;
+pars(1)=0; %nVols is saved separately as vector in the structure array below
 pars(2)=nPreds;  %% remember to add 1 for the constant column
 pars(3)=nTrials;
 pars(4)=nPerRun;
@@ -942,8 +956,7 @@ input_file_info.pars=pars;
 %input_file_info.CondClass=CondClass; %commented out at the beginning
 input_file_info.subject=subject;
 input_file_info.Hem=Hem;
-
-
+input_file_info.nVols = nVols; %this is customised for Giusi's experiment!
 
 
 

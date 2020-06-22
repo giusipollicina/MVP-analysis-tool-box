@@ -11,7 +11,7 @@ CondClass = [1 2];
 patch = 1;
 
 
-for subject = 1:length(subjects)
+for subject = 5:5 %length(subjects)
     for POIfile_ind = 1:8    
             run_single_sub_CollapseHem_main_analysis_parallel(subjects{subject},patch,CondClass,POIfile_ind);
         end

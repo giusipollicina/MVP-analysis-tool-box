@@ -1,4 +1,4 @@
-%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early “visual” cortex of congenitally blind individuals. Current Biology.
+%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ï¿½visualï¿½ cortex of congenitally blind individuals. Current Biology.
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function [svmOut]=singleSVM_PermP(train_set,test_set,p, CondClass,permGP,inputRandVec)
@@ -73,8 +73,9 @@ for r=1:size(train_set,3)
     end
     
     
-    if(size(train,1)~=size(gp,1))
+    if(size(train,1)~=size(gp,1));
         error('Training and gp vector mismatch');
+
     end
 
 

@@ -1,4 +1,4 @@
-%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early “visual” cortex of congenitally blind individuals. Current Biology.
+%The analysis code that was used in: Vetter P., Bola L., Reich L., Bennett M., Muckli L., Amedi A. (2020). Decoding natural sounds in early ï¿½visualï¿½ cortex of congenitally blind individuals. Current Biology.
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function run_single_sub_CollapseHem_main_analysis_parallel(subject,Patch_ind,CondClass,POIfile_ind)
@@ -84,5 +84,5 @@ pPerm_Apc=length(find(Apc >= Obs_Apc)) ./ 1000;
 
 %save FWStestCGY09_V5.mat
 % to save the output
- outname=sprintf('%s_MainAnalysis_CollapseHem_Patch%d_POI%d.mat', subject, Patch_ind,POIfile_ind);
+ outname=sprintf('%s_1vs2_CollapseHem_Patch%d_POI%d.mat', subject, Patch_ind,POIfile_ind);
 save(outname, 'subject','Patch_ind','permGP','outD','svmOutObs','pPerm_Spc','pPerm_Apc','Spc','Apc');

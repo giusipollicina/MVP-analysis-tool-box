@@ -27,7 +27,7 @@ dmName=fileNames.dm_name;
 condLocs=fileNames.cond_locs;
 p=fileNames.pars;  %% nClass and nVols
 subject=fileNames.subject;
-nVols_all = fileNames.nVols; %this is a vector specific to Giusi's exp
+nVols_all = fileNames.nVols_all; %this is a vector specific to Giusi's exp
 
 % some parameters
 nRuns=length(mtcName);
@@ -37,7 +37,7 @@ nRuns=length(mtcName);
 nPreds=p(2);
 nTrials=p(3);
 nPerRun=p(4);
-CondClass=fileNames.CondClass;
+%CondClass=fileNames.CondClass;
 nConditions=length(CondClass);
 
 % load in POI FILE
@@ -73,12 +73,12 @@ tvals=zeros(size(betas));
 % main loop
 for r=1:nRuns
 
-    nVols = nVols_all(nRuns);
+    nVols = nVols_all(r);
     %extract the correct number of volumes from the array depending on run
     %number
     
-    mtcData=zeros(nVols,nVert,nRuns);
-    DM=zeros(nVols,nPreds,nRuns);
+    mtcData=zeros(nVols,nVert,r);
+    DM=zeros(nVols,nPreds,r);
     
     % load in MTC DATA
 

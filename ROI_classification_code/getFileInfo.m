@@ -8,7 +8,7 @@ function [input_file_info]=getFileInfo(subject, Hem, CondClass, POIfile_ind)
 nPreds=108+1;   %% number of stimulation blocks plus 1 for baseline 
 %CondClass=1:3;   %% the conditions to classify, their codes in txt file
 nTrials=108; %number of stimulation blocks (without baseline) per run
-nPerRun=3;   %% number of blocks per condition per run
+nPerRun=54;   %% number of blocks per condition per run. Each block is how many trials per category, as they are defined in the trial sequence file.
 
 if(strcmp(subject,'sub-1'))
     nVols = [361 359 358]; % insert the number of volumes for each run 
@@ -46,23 +46,20 @@ if(strcmp(subject,'sub-1'))
     % the mtc file - mesh time course files
     if(Hem=='LH')
         mtc_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
-        mtc_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
-        mtc_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
-        mtc_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{2}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
+        mtc_name{3}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_LH.mtc';
         
     elseif(Hem=='RH')
         mtc_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
-        mtc_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
-        mtc_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
-        mtc_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{2}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
+        mtc_name{3}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL_RH.mtc';
         
     end
     
     % the design matrix files (single trial, single block based)
     dm_name{1}='sub-1_1_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
-    dm_name{2}='sub-1_2_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
-    dm_name{3}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
-    dm_name{4}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{2}='sub-1_3_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
+    dm_name{3}='sub-1_4_SCCTBL_3DMCTS_THPGLMF6c_256_trilin_2x1.0_TAL.sdm';
     
    % dm_name2{1}='EL_AVScenesLong_Run1_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm'; % you might not need these
    % dm_name2{2}='EL_AVScenesLong_Run2_SCSAI_3DMCTS_LTR_THPGLMF3c_TAL.sdm';
@@ -74,7 +71,6 @@ if(strcmp(subject,'sub-1'))
     cond_locs_name{1}='animate_inanimate.txt';
     cond_locs_name{2}='animate_inanimate.txt';
     cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
     
 elseif(strcmp(subject,'sub-2'))
     nVols = [360 358 360 357]; % insert the number of volumes for each run  
@@ -932,7 +928,13 @@ elseif(strcmp(subject,'sub-18'))
 
 % find condition locations and put them into one variable, cond_locs
 cond_locs=[];
-for i=1:4 %n of runs (number of trial seq files)
+if(strcmp(subject,'sub-1'))
+    tot_nRuns = 3;
+else tot_nRuns = 4;
+    
+end
+    
+for i=1:tot_nRuns %n of runs (number of trial seq files)
     tmp=load([dir_name cond_locs_name{i}]);
     cond_locs(:,i)=tmp;
 end
@@ -956,7 +958,7 @@ input_file_info.pars=pars;
 %input_file_info.CondClass=CondClass; %commented out at the beginning
 input_file_info.subject=subject;
 input_file_info.Hem=Hem;
-input_file_info.nVols = nVols; %this is customised for Giusi's experiment!
+input_file_info.nVols_all = nVols; %this is customised for Giusi's experiment!
 
 
 

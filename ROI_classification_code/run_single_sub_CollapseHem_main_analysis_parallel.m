@@ -2,8 +2,8 @@
 %The code was originally created by Fraser W. Smith (see Smith & Muckli 2010 PNAS)and was adapted to this project by Petra Vetter and Lukasz Bola.
 
 function run_single_sub_CollapseHem_main_analysis_parallel(subject,Patch_ind,CondClass,POIfile_ind)
-% subject = 'CGY09';
-% CondClass = [1 2 3];
+% subject = 'sub-8';
+% CondClass = [1 2];
 % Patch_ind=1;
 % POIfile_ind=2;
 % %this is the script to be run for the permutation analysis
@@ -59,13 +59,24 @@ tic
 
 
 toc % gives time for above line
+
+% addpath /usr/local/apps/psycapps/cluster
+% C = PsychoSGE;
+% C.Walltime = 2;
+% C.Logs = fullfile(pwd,'logs');
+% 
+% cluster = C.getCluster;
+% 
+% pool = C.getPool(8);
 tic
+
 parfor (i=1:1000)
     %randVec=inputRandVec(:,i);
     [svmOutPerm]=singleSVM_PermP(train_set,test_set,p, CondClass, permGP,inputRandVec(:,i));
     Spc(i)=mean(svmOutPerm.pc);
     Apc(i)=mean(svmOutPerm.av);
 end
+% C.closePool;
 toc  %% time for 1000 perms in parallel
 
 % perform classification for real data
@@ -84,5 +95,5 @@ pPerm_Apc=length(find(Apc >= Obs_Apc)) ./ 1000;
 
 %save FWStestCGY09_V5.mat
 % to save the output
- outname=sprintf('%s_1vs2_CollapseHem_Patch%d_POI%d.mat', subject, Patch_ind,POIfile_ind);
+ outname=sprintf('%s_12cat_CollapseHem_Patch%d_POI%d.mat', subject, Patch_ind,POIfile_ind);
 save(outname, 'subject','Patch_ind','permGP','outD','svmOutObs','pPerm_Spc','pPerm_Apc','Spc','Apc');

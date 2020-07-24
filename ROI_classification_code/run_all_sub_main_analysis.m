@@ -6,14 +6,15 @@
 subjects = {...
     'sub-1','sub-2','sub-3','sub-4','sub-5','sub-6','sub-7','sub-8', 'sub-9', 'sub-10', 'sub-14', 'sub-15', 'sub-16', 'sub-17', 'sub-18'...
     };
-CondClass = [1 2];
+CondClass = [1 2 3 4 5 6 7 8 9 10 11 12];
 
 patch = 1;
 
 
-for subject = 5:5 %length(subjects)
-    for POIfile_ind = 1:8    
+for subject = 10:12 %length(subjects)
+    for POIfile_ind = 4:4   
             run_single_sub_CollapseHem_main_analysis_parallel(subjects{subject},patch,CondClass,POIfile_ind);
-        end
     end
+end
+
 

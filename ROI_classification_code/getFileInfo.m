@@ -8,7 +8,7 @@ function [input_file_info]=getFileInfo(subject, Hem, CondClass, POIfile_ind)
 nPreds=108+1;   %% number of stimulation blocks plus 1 for baseline 
 %CondClass=1:3;   %% the conditions to classify, their codes in txt file
 nTrials=108; %number of stimulation blocks (without baseline) per run
-nPerRun=54;   %% number of blocks per condition per run. Each block is how many trials per category, as they are defined in the trial sequence file.
+nPerRun=9;   %% number of blocks per condition per run. Each block is how many trials per category, as they are defined in the trial sequence file.
 
 if(strcmp(subject,'sub-1'))
     nVols = [361 359 358]; % insert the number of volumes for each run 
@@ -68,9 +68,9 @@ if(strcmp(subject,'sub-1'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
     
 elseif(strcmp(subject,'sub-2'))
     nVols = [360 358 360 357]; % insert the number of volumes for each run  
@@ -127,10 +127,10 @@ elseif(strcmp(subject,'sub-2'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
     
 elseif(strcmp(subject,'sub-3'))
      nVols = [359 360 359 362]; % insert the number of volumes for each run 
@@ -148,7 +148,7 @@ elseif(strcmp(subject,'sub-3'))
          elseif POIfile_ind == 3
              poi_name='sub-3_LH_V3.poi';
          else
-             poi_name ='sub-2_LH_EVC.poi'; %EVC POI
+             poi_name ='sub-3_LH_EVC.poi'; %EVC POI
         end
         
     elseif(Hem=='RH')
@@ -187,10 +187,10 @@ elseif(strcmp(subject,'sub-3'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-4'))
      nVols = [361 362 362 360]; % insert the number of volumes for each run 
@@ -247,11 +247,11 @@ elseif(strcmp(subject,'sub-4'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
-
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
+    
 elseif(strcmp(subject,'sub-5'))
      nVols = [362 371 359 360]; % insert the number of volumes for each run 
        
@@ -307,10 +307,10 @@ elseif(strcmp(subject,'sub-5'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-6'))
     nVols = [358 362 358 362]; % insert the number of volumes for each run  
@@ -367,10 +367,10 @@ elseif(strcmp(subject,'sub-6'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
     
     
 elseif(strcmp(subject,'sub-7'))
@@ -428,10 +428,10 @@ elseif(strcmp(subject,'sub-7'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='hum_anim_veh_obj.txt';
+    cond_locs_name{2}='hum_anim_veh_obj.txt';
+    cond_locs_name{3}='hum_anim_veh_obj.txt';
+    cond_locs_name{4}='hum_anim_veh_obj.txt';
 
 
 elseif(strcmp(subject,'sub-8'))
@@ -490,11 +490,11 @@ elseif(strcmp(subject,'sub-8'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
-
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
+    
 elseif(strcmp(subject,'sub-9'))
      nVols = [368 358 360 360]; % insert the number of volumes for each run 
     
@@ -551,11 +551,11 @@ elseif(strcmp(subject,'sub-9'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
-
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
+    
 elseif(strcmp(subject,'sub-10'))
     nVols = [358 358 360 357]; % insert the number of volumes for each run 
    
@@ -612,10 +612,10 @@ elseif(strcmp(subject,'sub-10'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-14'))
     nVols = [360 360 361 357]; % insert the number of volumes for each run 
@@ -673,10 +673,10 @@ elseif(strcmp(subject,'sub-14'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-15'))
     nVols = [358 359 362 361]; % insert the number of volumes for each run 
@@ -734,10 +734,10 @@ elseif(strcmp(subject,'sub-15'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-16'))
      nVols = [361 360 362 367]; % insert the number of volumes for each run 
@@ -795,10 +795,10 @@ elseif(strcmp(subject,'sub-16'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
 
 elseif(strcmp(subject,'sub-17'))
     nVols = [361 361 359 366]; % insert the number of volumes for each run 
@@ -856,11 +856,12 @@ elseif(strcmp(subject,'sub-17'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
 
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
+    
 elseif(strcmp(subject,'sub-18'))
      nVols = [359 358 360 358]; % insert the number of volumes for each run 
     
@@ -917,10 +918,10 @@ elseif(strcmp(subject,'sub-18'))
     
     % the condition specifier files
     % crucial file, maps single trials or blocks onto experimental conditions
-    cond_locs_name{1}='animate_inanimate.txt';
-    cond_locs_name{2}='animate_inanimate.txt';
-    cond_locs_name{3}='animate_inanimate.txt';
-    cond_locs_name{4}='animate_inanimate.txt';
+    cond_locs_name{1}='subordinate_12.txt';
+    cond_locs_name{2}='subordinate_12.txt';
+    cond_locs_name{3}='subordinate_12.txt';
+    cond_locs_name{4}='subordinate_12.txt';
    
 
  end

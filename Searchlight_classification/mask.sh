@@ -3,7 +3,6 @@
 
 
 
-
 ### Select the proper version of matlab
 
 source /usr/local/apps/psycapps/config/matlab_bash
